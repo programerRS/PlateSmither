@@ -125,7 +125,7 @@ public class Smither extends ActiveScript implements PaintListener, MouseListene
 
         @Override
         public boolean isValid() {
-            return Inventory.getCount(Constants.ADAMANT_BAR_ID) > 5 && isForging;
+            return isForging && Inventory.getCount(Constants.ADAMANT_BAR_ID) > 5;
         }
 
         @Override
@@ -152,7 +152,7 @@ public class Smither extends ActiveScript implements PaintListener, MouseListene
 
         @Override
         public boolean isValid() {
-            return Inventory.getCount(Constants.ADAMANT_BAR_ID) < 6;
+            return Inventory.getCount(Constants.ADAMANT_BAR_ID) < 5;
         }
 
         @Override
