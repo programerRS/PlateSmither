@@ -81,7 +81,6 @@ public class Smither extends ActiveScript implements PaintListener, MouseListene
 
         @Override
         public void execute() {
-            isForging = false;
             try {
                 GameObject anvil = Objects.getNearest(Constants.ANVIL_ID);
                 if (anvil != null) {
@@ -130,6 +129,9 @@ public class Smither extends ActiveScript implements PaintListener, MouseListene
 
         @Override
         public void execute() {
+            if(Inventory.getCount(Constants.ADAMANT_BAR_ID) <= 5) {
+                isForging = false;
+            }
             if (Mouse.isPresent()) {
                 Mouse.moveOffScreen();
             }
